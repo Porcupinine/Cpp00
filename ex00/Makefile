@@ -23,14 +23,14 @@ ASANFLAGS += -fsanitize=address -fsanitize=leak
 #----------------------------------------------------------------Libraries path
 
 #-----------------------------------------------------------------------Headers
-
+HEADER	=
 #---------------------------------------------------------------------Libraries
 
 #------------------------------------------------------------------------Source
 SRC	:= megaphone.cpp
 
 #-----------------------------------------------------------------------Objects
-OBJS	:= ${SRC:.c=.o}
+OBJS	:= ${SRC:.cpp =.o}
 
 #---------------------------------------------------------------------Directory
 OBJ_DIR := objs/
@@ -39,12 +39,14 @@ OBJECTS_PREFIXED := $(addprefix $(OBJ_DIR), $(OBJS))
 #-------------------------------------------------------------------------Rules
 all: $(NAME)
 
-$(OBJ_DIR)%.o : %.c
-	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) -o $@ -c $<
+$(OBJ_DIR)%.o : %.cpp $(HEADER)
+	echo "dir"
+	mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 $(NAME): $(OBJECTS_PREFIXED)
-	@$(CC) $(OBJECTS_PREFIXED) -o $(NAME)
+	echo "making"
+	$(CC) $(OBJECTS_PREFIXED) -o $(NAME)
 
 clean:
 	@rm -rf $(OBJ_DIR)
