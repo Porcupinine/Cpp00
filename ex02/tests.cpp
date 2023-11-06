@@ -13,15 +13,16 @@
 #include "Account.hpp"
 #include <ctime>
 #include <iostream>
+#include <string>
 
-int main() {
-	std::time_t t = std::time(nullptr);   // get time now
-	std::tm* now = std::localtime(&t);
-	std::cout<<"["<<now->tm_year + 1900<<now->tm_mon<<now->tm_mday;
-	std::cout<<"_"<<now->tm_hour<<now->tm_min<<now->tm_sec<<"] ";
-}
+//int main() {
+//	std::time_t t = std::time(nullptr);   // get time now
+//	std::tm* now = std::localtime(&t);
+//	std::cout<<"["<<now->tm_year + 1900<<now->tm_mon<<now->tm_mday;
+//	std::cout<<"_"<<now->tm_hour<<now->tm_min<<now->tm_sec<<"] ";
+//}
 
-int		maint( void ) {
+int		main( void ) {
 
 	typedef std::vector<Account::t>							  accounts_t;
 	typedef std::vector<int>								  ints_t;
