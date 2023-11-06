@@ -50,7 +50,6 @@ $(NAME): $(OBJECTS_PREFIXED)
 
 clean:
 	@rm -rf $(OBJ_DIR)
-	@rm -rf $(LIBMLX)/build
 
 fclean: clean
 	@rm -f $(NAME)

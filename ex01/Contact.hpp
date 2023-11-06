@@ -10,10 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CPP00_CONTACT_H
-#define CPP00_CONTACT_H
+#ifndef CPP00_CONTACT_HPP
+#define CPP00_CONTACT_HPP
 
 #include <string>
+
+typedef enum type {
+	FIRST_NAME,
+	LAST_NAME,
+	NICKNAME,
+	PHONE,
+	DARKEST_SECRET,
+}E_TYPE;
 
 class Contact {
 	private:
@@ -26,8 +34,9 @@ class Contact {
 	public:
 		Contact();
 		~Contact();
-		void get_data();
+		bool get_data();
 		void show_data() const;
+		std::string content(E_TYPE type);
 };
 
-#endif //CPP00_CONTACT_H
+#endif //CPP00_CONTACT_HPP

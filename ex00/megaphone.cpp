@@ -21,7 +21,7 @@
 //		* LOUD AND UNBEARABLE FEEDBACK NOISE *
 //$>
 
-#include "megaphone.h"
+#include "megaphone.hpp"
 #include <iostream>
 #include <cstring>
 
