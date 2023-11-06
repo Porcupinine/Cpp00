@@ -30,7 +30,7 @@ int main (int argc, char **argv){
 		std::cout <<"* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	else {
 		for (int count = 1; count < argc; count++) {
-			for (int countStr = 0; countStr < std::strlen(argv[count]); countStr++)
+			for (size_t countStr = 0; countStr < std::strlen(argv[count]); countStr++)
 				putchar(toupper(argv[count][countStr]));
 			putchar(' ');
 		}

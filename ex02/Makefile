@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 #--------------------------------------------------------------------Executable
-NAME	:= megaphone
+NAME	:= account
 
 #----------------------------------------------------------------------Compiler
 CC 		=  -c++
@@ -23,11 +23,13 @@ ASANFLAGS += -fsanitize=address -fsanitize=leak
 #----------------------------------------------------------------Libraries path
 
 #-----------------------------------------------------------------------Headers
-HEADER	= megaphone.hpp
+HEADER	= Account.hpp
 #---------------------------------------------------------------------Libraries
 
 #------------------------------------------------------------------------Source
-SRC	:= megaphone.cpp
+SRC	:= Account.cpp \
+       Account.hpp \
+       tests.cpp
 
 #-----------------------------------------------------------------------Objects
 OBJS	:= ${SRC:.cpp=.o}
@@ -45,7 +47,7 @@ $(OBJ_DIR)%.o : %.cpp $(HEADER)
 
 $(NAME): $(OBJECTS_PREFIXED)
 	@$(CC) $(OBJECTS_PREFIXED) -o $(NAME)
-	@echo "Megaphone is ready!"
+	@echo "Accounts is ready!"
 
 clean:
 	@rm -rf $(OBJ_DIR)

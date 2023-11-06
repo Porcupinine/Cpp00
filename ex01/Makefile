@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 #--------------------------------------------------------------------Executable
-NAME	:= megaphone
+NAME	:= phonebook
 
 #----------------------------------------------------------------------Compiler
 CC 		=  -c++
@@ -23,11 +23,14 @@ ASANFLAGS += -fsanitize=address -fsanitize=leak
 #----------------------------------------------------------------Libraries path
 
 #-----------------------------------------------------------------------Headers
-HEADER	= megaphone.hpp
+HEADER	= Contact.hpp PhoneBook.hpp
 #---------------------------------------------------------------------Libraries
 
 #------------------------------------------------------------------------Source
-SRC	:= megaphone.cpp
+SRC	:= main.cpp \
+       PhoneBook.cpp \
+       Contact.cpp \
+       PhoneBook.cpp
 
 #-----------------------------------------------------------------------Objects
 OBJS	:= ${SRC:.cpp=.o}
@@ -45,7 +48,7 @@ $(OBJ_DIR)%.o : %.cpp $(HEADER)
 
 $(NAME): $(OBJECTS_PREFIXED)
 	@$(CC) $(OBJECTS_PREFIXED) -o $(NAME)
-	@echo "Megaphone is ready!"
+	@echo "PhoneBook is ready!"
 
 clean:
 	@rm -rf $(OBJ_DIR)
