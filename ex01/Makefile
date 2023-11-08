@@ -28,7 +28,6 @@ HEADER	= Contact.hpp PhoneBook.hpp
 
 #------------------------------------------------------------------------Source
 SRC	:= main.cpp \
-       PhoneBook.cpp \
        Contact.cpp \
        PhoneBook.cpp
 

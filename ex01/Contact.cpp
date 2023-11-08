@@ -12,6 +12,7 @@
 
 #include "Contact.hpp"
 #include <iostream>
+#include <algorithm>
 
 Contact::Contact() {
 //	std::cout << "Contact created!\n";
@@ -20,6 +21,7 @@ Contact::Contact() {
 Contact::~Contact() {
 //	std::cout << "Contact destroyed!\n";
 }
+
 bool check_phone(std::string number) {
 	for (int x = 0; number[x] != '\0'; x++)
 	{
@@ -34,16 +36,24 @@ bool check_phone(std::string number) {
 bool Contact::get_data() {
 	std::cout << "First name:";
 	std::getline(std::cin, m_first_name);
+	if (m_first_name == "" || std::all_of(m_first_name.begin(), m_first_name.end(), isspace))
+		return false;
 	std::cout << "Last name:";
 	std::getline(std::cin, m_last_name);
+	if (m_last_name == "" || std::all_of(m_last_name.begin(), m_last_name.end(), isspace))
+		return false;
 	std::cout << "Nickname:";
 	std::getline(std::cin, m_nickname);
+	if(m_nickname == "" || std::all_of(m_nickname.begin(), m_nickname.end(), isspace))
+		return false;
 	std::cout << "Number:";
 	std::getline(std::cin, m_phone);
 	if (!check_phone(m_phone))
 		return false;
 	std::cout << "Darkest secret:";
 	std::getline(std::cin, m_darkest_secret);
+	if (m_darkest_secret == "" || std::all_of(m_darkest_secret.begin(), m_darkest_secret.end(), isspace))
+		return false;
 	return true;
 }
 
