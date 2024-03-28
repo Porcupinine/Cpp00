@@ -28,7 +28,6 @@ HEADER	= Account.hpp
 
 #------------------------------------------------------------------------Source
 SRC	:= Account.cpp \
-       Account.hpp \
        tests.cpp
 
 #-----------------------------------------------------------------------Objects
@@ -43,7 +42,7 @@ all: $(NAME)
 
 $(OBJ_DIR)%.o : %.cpp $(HEADER)
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) -o $@ -c $<
+	@$(CC) -o $@ -c $<
 
 $(NAME): $(OBJECTS_PREFIXED)
 	@$(CC) $(OBJECTS_PREFIXED) -o $(NAME)

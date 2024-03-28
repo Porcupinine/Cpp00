@@ -31,8 +31,7 @@ int main (int argc, char **argv){
 	else {
 		for (int count = 1; count < argc; count++) {
 			for (size_t countStr = 0; countStr < std::strlen(argv[count]); countStr++)
-				putchar(toupper(argv[count][countStr]));
-			putchar(' ');
+				std::cout << static_cast<char>(toupper(argv[count][countStr]));
 		}
 	}
 }

@@ -21,7 +21,7 @@ int main (){
 	std::cout<<"We accept ADD, SEARCH and EXIT commands, and yeah, we are case sensitive\n";
 	std::cout<<"to ADD a contact you must fill all the fields and phone numbers must only contain digits\n";
 	std::cout<<"Have fun!\n";
-	while (1)
+	while (!std::cin.eof())
 	{
 		std::cout <<"Type your command: ";
 		std::getline(std::cin, line);

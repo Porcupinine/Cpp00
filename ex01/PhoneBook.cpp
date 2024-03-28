@@ -46,7 +46,7 @@ void PhoneBook::add_contact() {
 		m_index = 0;
 	if(!tmp.get_data())
 	{
-		std::cout<<"invalid input!";
+		std::cout<<"invalid input!\n";
 		return;
 	}
 	m_contacts[m_index] = tmp;
